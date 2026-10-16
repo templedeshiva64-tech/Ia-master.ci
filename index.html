@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LD Boutique — Chaussures</title>
+<meta name="description" content="LD Boutique — chaussures tendance en Côte d'Ivoire. Découvrez nos modèles et commandez facilement.">
+<style>
+:root{--black:#090909;--gold:#d9a72b;--gold2:#f4d27a;--cream:#fffaf0;--muted:#777;--card:#fff;--line:#eee}
+*{box-sizing:border-box} body{margin:0;font-family:Inter,Arial,sans-serif;background:var(--cream);color:#111}
+a{text-decoration:none;color:inherit}.top{background:#070707;color:#fff;text-align:center;padding:9px 14px;font-size:13px}
+header{position:sticky;top:0;z-index:20;background:rgba(9,9,9,.96);backdrop-filter:blur(12px);border-bottom:1px solid #242424}
+.nav{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:10px 18px}
+.brand{display:flex;align-items:center;gap:10px;color:#fff;font-weight:900}.brand img{width:55px;height:55px;object-fit:contain}.brand span{font-size:22px;letter-spacing:.5px}.brand small{display:block;color:var(--gold2);font-size:10px;letter-spacing:2px}
+nav{display:flex;gap:22px;color:#ddd;font-size:14px}nav a:hover{color:var(--gold2)}
+.hero{max-width:1180px;margin:0 auto;padding:55px 18px 25px;display:grid;grid-template-columns:1.05fr .95fr;gap:35px;align-items:center}
+.kicker{color:#a27615;font-weight:800;letter-spacing:2px;text-transform:uppercase;font-size:12px}
+h1{font-size:clamp(42px,6vw,72px);line-height:.95;margin:12px 0 18px;letter-spacing:-3px}.hero p{font-size:17px;line-height:1.7;color:#555;max-width:600px}
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:14px 22px;font-weight:800;border:1px solid #111;margin:7px 7px 7px 0}.primary{background:#0a0a0a;color:#fff}.secondary{background:#fff}.btn:hover{transform:translateY(-1px)}
+.hero-art{background:#111;border-radius:34px;min-height:390px;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 25px 70px #0002}.hero-art img{width:88%;max-height:390px;object-fit:contain}
+.section{max-width:1180px;margin:auto;padding:35px 18px}.section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin-bottom:20px}.section h2{font-size:32px;margin:0}.section-head p{color:#777;margin:0}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}.filter{border:1px solid #ddd;background:#fff;padding:9px 14px;border-radius:999px;cursor:pointer}.filter.active{background:#111;color:#fff;border-color:#111}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:0 10px 35px #0000000b;transition:.2s}.card:hover{transform:translateY(-4px);box-shadow:0 18px 45px #0002}.pic{aspect-ratio:1/1;overflow:hidden;background:#f3f3f3;cursor:pointer}.pic img{width:100%;height:100%;object-fit:cover}.info{padding:15px}.tag{display:inline-block;background:#f6ead0;color:#825d0b;padding:5px 9px;border-radius:999px;font-size:11px;font-weight:800}.name{font-weight:850;font-size:17px;margin:9px 0 5px}.sizes{font-size:12px;color:#777;min-height:30px}.price{font-size:20px;font-weight:900;margin-top:12px}.old{font-size:12px;color:#999;text-decoration:line-through;margin-left:4px}.card button{width:100%;margin-top:12px;border:0;border-radius:12px;background:#111;color:#fff;padding:12px;font-weight:800;cursor:pointer}
+.banner{margin-top:15px;background:#111;color:#fff;border-radius:28px;padding:30px;display:flex;justify-content:space-between;gap:20px;align-items:center}.banner h3{font-size:27px;margin:0 0 8px}.banner p{color:#ccc;margin:0;line-height:1.5}.banner .btn{background:var(--gold);border:0;color:#111;white-space:nowrap}
+footer{background:#080808;color:#fff;margin-top:50px;padding:40px 18px}.foot{max-width:1180px;margin:auto;display:flex;justify-content:space-between;gap:25px;align-items:center}.foot img{width:75px}.foot p{color:#aaa;font-size:13px;line-height:1.6}
+.modal{position:fixed;inset:0;background:#0009;z-index:50;display:none;align-items:center;justify-content:center;padding:15px}.modal.show{display:flex}.box{background:#fff;border-radius:24px;max-width:850px;width:100%;max-height:92vh;overflow:auto;display:grid;grid-template-columns:1fr 1fr}.box img{width:100%;height:100%;min-height:350px;object-fit:cover}.details{padding:28px}.close{float:right;border:0;background:#eee;border-radius:50%;width:35px;height:35px;cursor:pointer;font-size:20px}.details h2{font-size:30px;margin:30px 0 8px}.detail-price{font-size:28px;font-weight:900;margin:15px 0}.choice{border:1px solid #ddd;border-radius:12px;padding:12px;margin:8px 0;cursor:pointer}.choice.selected{border:2px solid #111}.whatsapp{display:block;background:#111;color:#fff;padding:14px;text-align:center;border-radius:12px;font-weight:900;margin-top:18px}
+.note{font-size:12px;color:#777;margin-top:12px}
+@media(max-width:900px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:repeat(2,1fr)}nav{display:none}.box{grid-template-columns:1fr}.box img{max-height:330px;min-height:0}.foot{flex-direction:column;text-align:center}}
+@media(max-width:520px){.grid{grid-template-columns:1fr 1fr;gap:10px}.info{padding:11px}.name{font-size:15px}.price{font-size:18px}.hero{padding-top:35px}.hero-art{min-height:290px}}
+</style>
+</head>
+<body>
+<div class="top">✨ LD Boutique — chaussures tendance • Côte d’Ivoire</div>
+<header><div class="nav">
+<a class="brand" href="#"><img src="logo.png" alt="Logo LD Boutique"><span>LD <small>BOUTIQUE</small></span></a>
+<nav><a href="#collection">Collection</a><a href="#commande">Commander</a><a href="#contact">Contact</a></nav>
+</div></header>
+
+<main>
+<section class="hero">
+<div><div class="kicker">Style • Qualité • Prix</div><h1>Ton style.<br><span style="color:#b17d10">Tes chaussures.</span><br>Ton choix.</h1>
+<p>Bienvenue chez <b>LD Boutique</b>. Découvre nos modèles, vérifie les pointures disponibles et commande directement depuis ton téléphone.</p>
+<a class="btn primary" href="#collection">Voir la collection</a><a class="btn secondary" href="#commande">Comment commander ?</a></div>
+<div class="hero-art"><img src="logo.png" alt="LD Boutique"></div>
+</section>
+
+<section class="section" id="collection">
+<div class="section-head"><div><h2>Notre collection</h2><p>Choisis un modèle pour voir les détails et les pointures.</p></div></div>
+<div class="filters"><button class="filter active" data-filter="all">Toutes</button><button class="filter" data-filter="15000">15 000 FCFA</button><button class="filter" data-filter="14000">14 000 FCFA</button><button class="filter" data-filter="20000">20 000 FCFA</button></div>
+<div class="grid" id="products"></div>
+</section>
+
+<section class="section" id="commande">
+<div class="banner"><div><h3>Tu as trouvé ta paire ?</h3><p>Envoie-nous le modèle + ta pointure pour vérifier la disponibilité.</p></div><a class="btn" id="waMain" href="#">Commander sur WhatsApp</a></div>
+</section>
+</main>
+
+<footer id="contact"><div class="foot"><img src="logo.png" alt="LD Boutique"><div><b>LD Boutique</b><p>Chaussures tendance en Côte d’Ivoire.<br>© 2026 LD Boutique — Tous droits réservés.</p></div><div><b>Contact</b><p>WhatsApp : à renseigner<br>Instagram / TikTok : à renseigner</p></div></div></footer>
+
+<div class="modal" id="modal"><div class="box"><img id="mImg" src="" alt=""><div class="details"><button class="close" onclick="closeModal()">×</button><h2 id="mName"></h2><div class="detail-price" id="mPrice"></div><p id="mDesc"></p><div><b>Pointures disponibles :</b></div><div id="mSizes"></div><a class="whatsapp" id="mWa" href="#">Commander ce modèle sur WhatsApp</a><div class="note">Remplace le numéro WhatsApp dans le code par celui de LD Boutique avant la mise en ligne.</div></div></div></div>
+
+<script>
+const WHATSAPP = "2250000000000"; // ← REMPLACE par ton numéro WhatsApp, avec 225
+const products = [
+ {id:1,name:"Adidas Floral Rose",price:15000,sizes:"36 à 41",img:"shoe1.jpg",desc:"Modèle blanc et rose, look tendance et facile à porter."},
+ {id:2,name:"Sneakers Rouge & Noir",price:15000,sizes:"Toutes les pointures",img:"shoe2.jpg",desc:"Modèle sportif rouge et noir, disponible dans toutes les pointures."},
+ {id:3,name:"Adidas Noir & Blanc",price:14000,sizes:"44, 45",img:"shoe3.jpg",desc:"Sneakers noire et blanche, style sobre et moderne."},
+ {id:4,name:"ASICS Rose — gros lacets",price:20000,sizes:"40, 41, 42, 43, 44",img:"shoe4.jpg",desc:"Version avec gros lacets roses. Version petit lacets : 15 000 FCFA." ,variants:[["Gros lacets",20000],["Petits lacets",15000]]},
+ {id:5,name:"New Balance Blanche",price:15000,sizes:"40, 41, 42, 43, 44, 45",img:"shoe5.jpg",desc:"Sneakers blanche et grise, confortable et polyvalente."},
+ {id:6,name:"Adidas Campus Noir",price:15000,sizes:"42, 43, 44",img:"shoe6.jpg",desc:"Adidas noire à trois bandes blanches, style classique."},
+ {id:7,name:"Sneakers Bordeaux & Blanc",price:null,sizes:"44",img:"shoe7.jpg",desc:"Modèle bordeaux et blanc. Pointure disponible : 44."}
+];
+const grid=document.getElementById("products");
+function money(n){return n? n.toLocaleString("fr-FR")+" FCFA":"Prix à confirmer";}
+function render(filter="all"){grid.innerHTML=products.filter(p=>filter==="all"||String(p.price)===filter).map(p=>`
+<article class="card"><div class="pic" onclick="openModal(${p.id})"><img src="${p.img}" alt="${p.name}"></div><div class="info"><span class="tag">Disponible</span><div class="name">${p.name}</div><div class="sizes">Pointures : ${p.sizes}</div><div class="price">${money(p.price)} ${p.variants?'<span class="old">petits lacets 15 000</span>':''}</div><button onclick="openModal(${p.id})">Voir les détails</button></div></article>`).join("")}
+document.querySelectorAll(".filter").forEach(b=>b.onclick=()=>{document.querySelectorAll(".filter").forEach(x=>x.classList.remove("active"));b.classList.add("active");render(b.dataset.filter)});
+function openModal(id){const p=products.find(x=>x.id===id);document.getElementById("mImg").src=p.img;document.getElementById("mName").textContent=p.name;document.getElementById("mPrice").textContent=money(p.price);document.getElementById("mDesc").textContent=p.desc;document.getElementById("mSizes").innerHTML=p.sizes.split(",").map(s=>`<div class="choice">${s.trim()}</div>`).join("");let msg=`Bonjour LD Boutique, je veux commander : ${p.name}. Pointure : `;document.getElementById("mWa").href=`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;document.getElementById("modal").classList.add("show")}
+function closeModal(){document.getElementById("modal").classList.remove("show")}
+document.getElementById("waMain").href=`https://wa.me/${WHATSAPP}?text=${encodeURIComponent("Bonjour LD Boutique, je souhaite voir les chaussures disponibles.")}`;
+document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="modal")closeModal()});
+render();
+</script>
+</body>
+</html>
